@@ -1,35 +1,88 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { Send } from "lucide-react"
+import { useMemo, useState } from "react";
+import { motion } from "framer-motion";
+import { Send } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { useToast } from "@/hooks/use-toast"
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
 
 export function ContactForm() {
-  const { toast } = useToast()
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [statusMessage, setStatusMessage] = useState<{
+    type: "success" | "error";
+    text: string;
+  } | null>(null);
+  const formspreeEndpoint = useMemo(
+    () => process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || "",
+    []
+  );
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    if (!formspreeEndpoint) {
+      toast({
+        title: "Form endpoint missing",
+        description: "환경변수 NEXT_PUBLIC_FORMSPREE_ENDPOINT를 설정해주세요.",
+        variant: "destructive",
+      });
+      return;
+    }
+    setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    setStatusMessage(null);
+    const formData = new FormData(e.currentTarget);
 
-    toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    })
+    try {
+      const res = await fetch(formspreeEndpoint, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
 
-    setIsSubmitting(false)
-    e.currentTarget.reset()
-  }
+      // Formspree가 errors 배열을 주면 실패로 처리, 그 외에는 200이면 성공 처리
+      try {
+        const data = await res.json();
+        if (Array.isArray(data?.errors) && data.errors.length > 0) {
+          const errorText = data.errors
+            .map((e: any) => e?.message || "Error")
+            .join(", ");
+          throw new Error(errorText);
+        }
+      } catch {
+        // JSON 파싱 실패 시에도 200이면 성공으로 간주
+      }
+
+      toast({
+        title: "Message sent!",
+        description: "Thanks for reaching out. I'll get back to you soon.",
+      });
+      setStatusMessage({
+        type: "success",
+        text: "메시지가 전송되었어요. 확인 후 답변드릴게요!",
+      });
+      e.currentTarget.reset();
+    } catch (error) {
+      toast({
+        title: "전송에 실패했습니다",
+        description: "잠시 후 다시 시도해주세요.",
+        variant: "destructive",
+      });
+      setStatusMessage({
+        type: "error",
+        text: "전송에 실패했습니다. 잠시 후 다시 시도해주세요.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <motion.div
@@ -49,6 +102,7 @@ export function ContactForm() {
               <Input
                 placeholder="Your Name"
                 required
+                name="name"
                 className="bg-zinc-900/50 border-zinc-700 focus:border-blue-500 focus:ring-blue-500/20"
               />
             </div>
@@ -57,6 +111,7 @@ export function ContactForm() {
                 type="email"
                 placeholder="Your Email"
                 required
+                name="email"
                 className="bg-zinc-900/50 border-zinc-700 focus:border-blue-500 focus:ring-blue-500/20"
               />
             </div>
@@ -64,6 +119,7 @@ export function ContactForm() {
               <Input
                 placeholder="Subject"
                 required
+                name="subject"
                 className="bg-zinc-900/50 border-zinc-700 focus:border-blue-500 focus:ring-blue-500/20"
               />
             </div>
@@ -72,6 +128,7 @@ export function ContactForm() {
                 placeholder="Your Message"
                 rows={5}
                 required
+                name="message"
                 className="bg-zinc-900/50 border-zinc-700 focus:border-blue-500 focus:ring-blue-500/20"
               />
             </div>
@@ -88,9 +145,22 @@ export function ContactForm() {
                 </>
               )}
             </Button>
+            {statusMessage && (
+              <p
+                className={`text-sm ${
+                  statusMessage.type === "success"
+                    ? "text-green-400"
+                    : "text-red-400"
+                }`}
+                role="status"
+                aria-live="polite"
+              >
+                {statusMessage.text}
+              </p>
+            )}
           </form>
         </div>
       </div>
     </motion.div>
-  )
+  );
 }

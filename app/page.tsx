@@ -50,18 +50,24 @@ export default function Portfolio() {
               바로 이해할 수 있는 구조, 사용하기 편한 흐름을 고민합니다.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button className="relative overflow-hidden group bg-gradient-to-r from-blue-600 to-sky-500 border-0">
-                <span className="relative z-10 flex items-center">
-                  View Projects{" "}
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </span>
-                <span className="absolute inset-0 bg-gradient-to-r from-sky-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+              <Button
+                className="relative overflow-hidden group bg-gradient-to-r from-blue-600 to-sky-500 border-0"
+                asChild
+              >
+                <Link href="#projects">
+                  <span className="relative z-10 flex items-center">
+                    View Projects{" "}
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                  <span className="absolute inset-0 bg-gradient-to-r from-sky-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                </Link>
               </Button>
               <Button
                 variant="outline"
                 className="border-zinc-700 text-sky-400 hover:text-sky-300 hover:border-sky-500/50"
+                asChild
               >
-                Contact Me
+                <Link href="#contact">Contact Me</Link>
               </Button>
             </div>
             <div className="flex gap-4 pt-4">
@@ -204,6 +210,10 @@ export default function Portfolio() {
             <SkillIcon name="React" />
             <SkillIcon name="Next.js" />
             <SkillIcon name="Git" />
+            <SkillIcon name="FastAPI" />
+            <SkillIcon name="NGINX" />
+            <SkillIcon name="NPM" />
+            <SkillIcon name="Redux" />
             <SkillIcon name="Jenkins" />
             <SkillIcon name="Github Actions (CI/CD)" />
             <SkillIcon name="AWS (EC2, S3)" />
@@ -306,8 +316,8 @@ export default function Portfolio() {
         <div className="container relative z-10">
           <SectionHeading title="Get In Touch" subtitle="함께 일해요" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-16">
-            <GlassmorphicCard>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch mt-16">
+            <GlassmorphicCard className="h-full">
               <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
@@ -339,7 +349,9 @@ export default function Portfolio() {
               </div>
             </GlassmorphicCard>
 
-            <ContactForm />
+            <div className="h-full">
+              <ContactForm />
+            </div>
           </div>
         </div>
       </section>

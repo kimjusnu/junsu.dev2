@@ -1,101 +1,166 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useMobile } from "@/hooks/use-mobile"
+import { motion } from "framer-motion";
+import { useMobile } from "@/hooks/use-mobile";
 
-const experiences = [
+type TimelineGroup = {
+  year: string;
+  tag?: string;
+  items: {
+    title: string;
+    detail: string;
+  }[];
+};
+
+const experienceGroups: TimelineGroup[] = [
   {
-    title: "인턴",
-    company: "더이노베이터스 · TA 기술연구부서",
-    period: "2025.03 - 2025.06",
-    description:
-      "프론트엔드 개발 담당. React·Next.js 기반 신규 기능 설계/개발, CI/CD 파이프라인 고도화 및 배포 자동화. StartupQT 프로젝트를 기획·주도하여 제작/검수 리드타임 42% 단축 달성.",
+    year: "2025",
+    tag: "인턴 · 현업 · 강의",
+    items: [
+      {
+        title: "에임비랩 SW부서 대리 (프론트엔드 & 백엔드)",
+        detail: "2025.07 - 현재 · 마이피드 1.5/2.0, 관리기 등 개발",
+      },
+      {
+        title: "더이노베이터스 TA 기술연구부서 인턴",
+        detail: "2025.03 - 2025.06 · StartupQT 플랫폼, CI/CD 고도화",
+      },
+    ],
   },
   {
-    title: "프론트엔드 3기 부트캠프 수료",
-    company: "스나이퍼팩토리",
-    period: "2024.09 - 2024.11",
-    description:
-      "프론트엔드 전반 심화 학습. 팀 프로젝트 리더로 전체 일정 및 UI 개발 총괄. 우수상 수상.",
+    year: "2024",
+    tag: "부트캠프 · 커뮤니티",
+    items: [
+      {
+        title: "스나이퍼팩토리 프론트엔드 3기",
+        detail: "2024.10 - 2024.12 · 팀 프로젝트 리더, 우수상",
+      },
+      { title: "TUK GDSC Beginner", detail: "2024.05 - 2024.08 · React 학습" },
+      {
+        title: "웅진씽크빅 × Udemy Next.js 부트캠프 3기",
+        detail: "2024.04 - 2024.09 · 우수 학생, 팀 프로젝트 2등",
+      },
+      { title: "현장실습 서포터즈 드림온 5기 부단장", detail: "2024.02" },
+    ],
   },
   {
-    title: "Next.js 부트캠프 수료",
-    company: "웅진씽크빅 × Udemy",
-    period: "2024.07 - 2024.09",
-    description:
-      "Next.js 집중 교육 수료 후 실전 프로젝트 완수 (전체 FE 담당). 2등 우수상 수상.",
+    year: "2023",
+    tag: "학습 시작 · 서포터즈",
+    items: [
+      {
+        title: "현장실습 서포터즈 드림온 4기 단원",
+        detail: "2023.07 - 2024.01 · 현장실습 지원",
+      },
+      { title: "프론트엔드 학습 시작", detail: "2023.09 · HTML, JS, CSS" },
+      {
+        title: "현장실습 서포터즈 드림온 3기 단원",
+        detail: "2022.12 - 2023.06 · 캠퍼스 홍보 콘텐츠",
+      },
+    ],
   },
   {
-    title: "물리 강사",
-    company: "와이즈만 영재학원",
-    period: "2025.01 - 현재",
-    description: "초·중·고 대상 물리 수업. 내신·수능 대비 강의.",
+    year: "2021 - 2022",
+    tag: "군 복무",
+    items: [
+      {
+        title: "대한민국 육군 53사단 126여단 4대대 병장",
+        detail:
+          "2021.06.07 - 2022.12.06 · 부산 호국훈련 전략기획 PPT 제작·발표",
+      },
+    ],
   },
   {
-    title: "현장실습 서포터즈 1·2·3기",
-    company: "한국공학대학교",
-    period: "2022.12 - 2025.02",
-    description: "1·2기 단원 / 3기 부단장. 실습 지원 및 캠퍼스 홍보 콘텐츠 제작.",
+    year: "2020",
+    tag: "학업 · 동아리",
+    items: [
+      {
+        title: "대학생 발표연합동아리 Spring 42기 운영진",
+        detail: "2020.10 - 2021.04 · 기획팀 팀장",
+      },
+      {
+        title: "대학생 발표연합동아리 Spring 40기 기수",
+        detail: "2020.03 - 2020.09 · 발표 수상 2회",
+      },
+      {
+        title: "한국공학대학교 컴퓨터공학부 입학",
+        detail: "2020.03 · 소프트웨어 전공",
+      },
+    ],
   },
-  {
-    title: "병장 만기전역",
-    company: "대한민국 육군 53사단",
-    period: "2021.06 - 2022.12",
-    description: "부산 호국훈련 전략기획 피피티 제작 후 발표.",
-  },
-]
+];
 
 export function Timeline() {
-  const isMobile = useMobile()
+  const isMobile = useMobile();
 
   return (
     <div
       className={`space-y-12 relative ${
         !isMobile
-          ? "before:absolute before:inset-0 before:left-1/2 before:ml-0 before:-translate-x-px before:border-l-2 before:border-zinc-700 before:h-full before:z-0"
+          ? "before:absolute before:inset-0 before:left-1/2 before:-translate-x-px before:border-l-2 before:border-zinc-700 before:h-full before:z-0"
           : ""
       }`}
     >
-      {experiences.map((experience, index) => (
-        <div
-          key={index}
-          className={`relative z-10 flex items-center ${index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"}`}
-        >
-          <motion.div
-            className={`w-full md:w-1/2 ${index % 2 === 0 ? "md:pl-10" : "md:pr-10"}`}
-            initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
+      {experienceGroups.map((group, index) => {
+        const alignRight = index % 2 === 0;
+        return (
+          <div
+            key={group.year}
+            className={`relative z-10 flex items-center ${
+              alignRight ? "md:flex-row-reverse" : "md:flex-row"
+            }`}
           >
-            <div className="relative overflow-hidden rounded-xl bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 p-6 transition-all duration-300 hover:border-blue-500/50">
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-800/10 to-sky-500/10 rounded-xl blur opacity-25 hover:opacity-100 transition duration-1000 hover:duration-200"></div>
+            <motion.div
+              className={`w-full md:w-1/2 ${
+                alignRight ? "md:pl-10" : "md:pr-10"
+              }`}
+              initial={{ opacity: 0, x: alignRight ? 50 : -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <div className="relative overflow-hidden rounded-xl bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 p-6 transition-all duration-300 hover:border-blue-500/50">
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-800/10 to-sky-500/10 rounded-xl blur opacity-25 hover:opacity-100 transition duration-1000 hover:duration-200"></div>
 
-              <div className="relative">
-                <h3 className="text-xl font-bold">{experience.title}</h3>
-                <div className="text-zinc-400 mb-4">
-                  {experience.company} | {experience.period}
+                <div className="relative space-y-4">
+                  <div className="px-3 py-1 inline-flex rounded-full border border-zinc-700 bg-zinc-900/70 text-sm text-zinc-100 font-semibold">
+                    {group.year}
+                  </div>
+
+                  <ul className="space-y-2">
+                    {group.items.map((item, idx) => (
+                      <li
+                        key={`${group.year}-${idx}`}
+                        className="leading-relaxed"
+                      >
+                        <div className="text-sm font-semibold text-white">
+                          • {item.title}
+                        </div>
+                        <div className="text-xs text-zinc-400 mt-1">
+                          {item.detail}
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <p className="text-zinc-300">{experience.description}</p>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
 
-          {!isMobile && (
-            <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center">
-              <motion.div
-                className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-600 to-sky-500 z-10 flex items-center justify-center"
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                transition={{ duration: 0.3 }}
-                viewport={{ once: true }}
-              >
-                <div className="w-2 h-2 rounded-full bg-white"></div>
-              </motion.div>
-            </div>
-          )}
-        </div>
-      ))}
+            {!isMobile && (
+              <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center">
+                <motion.div
+                  className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-600 to-sky-500 z-10 flex items-center justify-center"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ duration: 0.3 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="w-2 h-2 rounded-full bg-white"></div>
+                </motion.div>
+              </div>
+            )}
+          </div>
+        );
+      })}
     </div>
-  )
+  );
 }

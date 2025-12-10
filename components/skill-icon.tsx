@@ -40,6 +40,18 @@ const skillIcons: Record<string, React.ReactNode> = {
   "Vercel": (
     <Image src="/Vercel.svg" alt="Vercel" width={32} height={32} className="w-8 h-8" />
   ),
+  "FastAPI": (
+    <Image src="/FastAPI.svg" alt="FastAPI" width={32} height={32} className="w-8 h-8" />
+  ),
+  "NGINX": (
+    <Image src="/NGINX.svg" alt="NGINX" width={32} height={32} className="w-8 h-8" />
+  ),
+  "NPM": (
+    <Image src="/NPM.svg" alt="NPM" width={32} height={32} className="w-8 h-8" />
+  ),
+  "Redux": (
+    <Image src="/Redux.svg" alt="Redux" width={32} height={32} className="w-8 h-8" />
+  ),
   
   // State & Data
   "Zustand": (

@@ -35,7 +35,7 @@ export function SectionHeading({ title, subtitle }: SectionHeadingProps) {
       </motion.h2>
 
       <motion.div
-        className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-sky-500 rounded-full mx-auto mt-6"
+        className="w-24 h-1 bg-gradient-to-r from-blue-600 to-sky-500 rounded-full mx-auto mt-8"
         initial={{ opacity: 0, scale: 0 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.4 }}

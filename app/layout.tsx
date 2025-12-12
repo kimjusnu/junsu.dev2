@@ -1,5 +1,7 @@
-import type { Metadata } from 'next'
-import './globals.css'
+import type { Metadata } from "next";
+import React from "react";
+import "./globals.css";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: '김준수 | Frontend Developer Portfolio',
@@ -15,11 +17,14 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="ko">
-      <body>{children}</body>
+      <body>
+        {children}
+        <Toaster />
+      </body>
     </html>
-  )
+  );
 }

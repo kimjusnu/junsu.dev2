@@ -1,94 +1,214 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Image from "next/image"
-import { Layers, HardDrive } from "lucide-react"
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { Layers, HardDrive } from "lucide-react";
 
 interface SkillIconProps {
-  name: string
-  icon?: React.ReactNode
+  name: string;
+  icon?: React.ReactNode;
 }
 
 const skillIcons: Record<string, React.ReactNode> = {
   // Frontend
-  "JavaScript": (
-    <Image src="/JavaScript.svg" alt="JavaScript" width={32} height={32} className="w-8 h-8" />
+  JavaScript: (
+    <Image
+      src="/JavaScript.svg"
+      alt="JavaScript"
+      width={32}
+      height={32}
+      className="w-8 h-8"
+    />
   ),
-  "TypeScript": (
-    <Image src="/TypeScript.svg" alt="TypeScript" width={32} height={32} className="w-8 h-8" />
+  TypeScript: (
+    <Image
+      src="/TypeScript.svg"
+      alt="TypeScript"
+      width={32}
+      height={32}
+      className="w-8 h-8"
+    />
   ),
-  "React": (
-    <Image src="/React.svg" alt="React" width={32} height={32} className="w-8 h-8" />
+  React: (
+    <Image
+      src="/React.svg"
+      alt="React"
+      width={32}
+      height={32}
+      className="w-8 h-8"
+    />
   ),
   "Next.js": (
-    <Image src="/Next.js.svg" alt="Next.js" width={32} height={32} className="w-8 h-8" />
+    <Image
+      src="/Next.js.svg"
+      alt="Next.js"
+      width={32}
+      height={32}
+      className="w-8 h-8"
+    />
   ),
-  
+
   // DevOps & Infra
-  "Git": (
-    <Image src="/Git.svg" alt="Git" width={32} height={32} className="w-8 h-8" />
+  Git: (
+    <Image
+      src="/Git.svg"
+      alt="Git"
+      width={32}
+      height={32}
+      className="w-8 h-8"
+    />
   ),
-  "Jenkins": (
-    <Image src="/Jenkins.svg" alt="Jenkins" width={32} height={32} className="w-8 h-8" />
+  Jenkins: (
+    <Image
+      src="/Jenkins.svg"
+      alt="Jenkins"
+      width={32}
+      height={32}
+      className="w-8 h-8"
+    />
   ),
   "Github Actions (CI/CD)": (
-    <Image src="/GitHub Actions.svg" alt="GitHub Actions" width={32} height={32} className="w-8 h-8" />
+    <Image
+      src="/GitHub Actions.svg"
+      alt="GitHub Actions"
+      width={32}
+      height={32}
+      className="w-8 h-8"
+    />
   ),
   "AWS (EC2, S3)": (
-    <Image src="/AWS.svg" alt="AWS" width={32} height={32} className="w-8 h-8" />
+    <Image
+      src="/AWS.svg"
+      alt="AWS"
+      width={32}
+      height={32}
+      className="w-8 h-8"
+    />
   ),
-  "Vercel": (
-    <Image src="/Vercel.svg" alt="Vercel" width={32} height={32} className="w-8 h-8" />
+  Vercel: (
+    <Image
+      src="/Vercel.svg"
+      alt="Vercel"
+      width={32}
+      height={32}
+      className="w-8 h-8"
+    />
   ),
-  "FastAPI": (
-    <Image src="/FastAPI.svg" alt="FastAPI" width={32} height={32} className="w-8 h-8" />
+  FastAPI: (
+    <Image
+      src="/FastAPI.svg"
+      alt="FastAPI"
+      width={32}
+      height={32}
+      className="w-8 h-8"
+    />
   ),
-  "NGINX": (
-    <Image src="/NGINX.svg" alt="NGINX" width={32} height={32} className="w-8 h-8" />
+  NGINX: (
+    <Image
+      src="/NGINX.svg"
+      alt="NGINX"
+      width={32}
+      height={32}
+      className="w-8 h-8"
+    />
   ),
-  "NPM": (
-    <Image src="/NPM.svg" alt="NPM" width={32} height={32} className="w-8 h-8" />
+  NPM: (
+    <Image
+      src="/NPM.svg"
+      alt="NPM"
+      width={32}
+      height={32}
+      className="w-8 h-8"
+    />
   ),
-  "Redux": (
-    <Image src="/Redux.svg" alt="Redux" width={32} height={32} className="w-8 h-8" />
+  Redux: (
+    <Image
+      src="/Redux.svg"
+      alt="Redux"
+      width={32}
+      height={32}
+      className="w-8 h-8"
+    />
   ),
-  
+
   // State & Data
-  "Zustand": (
-    <Image src="/Zustand.svg" alt="Zustand" width={32} height={32} className="w-8 h-8" />
+  Zustand: (
+    <Image
+      src="/Zustand.svg"
+      alt="Zustand"
+      width={32}
+      height={32}
+      className="w-8 h-8"
+    />
   ),
   "TanStack Query": <Layers className="h-8 w-8 text-red-400" />,
-  "Storage": <HardDrive className="h-8 w-8 text-sky-400" />,
-  "Firebase": (
-    <Image src="/Firebase.svg" alt="Firebase" width={32} height={32} className="w-8 h-8" />
+  Storage: <HardDrive className="h-8 w-8 text-sky-400" />,
+  Firebase: (
+    <Image
+      src="/Firebase.svg"
+      alt="Firebase"
+      width={32}
+      height={32}
+      className="w-8 h-8"
+    />
   ),
-  
+
   // Design & UX
-  "Figma": (
-    <Image src="/Figma.svg" alt="Figma" width={32} height={32} className="w-8 h-8" />
+  Figma: (
+    <Image
+      src="/Figma.svg"
+      alt="Figma"
+      width={32}
+      height={32}
+      className="w-8 h-8"
+    />
   ),
-  
+
   // Communication & Collab
-  "Notion": (
-    <Image src="/Notion.png" alt="Notion" width={32} height={32} className="w-8 h-8" />
+  Notion: (
+    <Image
+      src="/Notion.png"
+      alt="Notion"
+      width={32}
+      height={32}
+      className="w-8 h-8"
+    />
   ),
-  "Slack": (
-    <Image src="/Slack.svg" alt="Slack" width={32} height={32} className="w-8 h-8" />
+  Slack: (
+    <Image
+      src="/Slack.svg"
+      alt="Slack"
+      width={32}
+      height={32}
+      className="w-8 h-8"
+    />
   ),
-  "Discord": (
-    <Image src="/Discord.png" alt="Discord" width={32} height={32} className="w-8 h-8" />
+  Discord: (
+    <Image
+      src="/Discord.png"
+      alt="Discord"
+      width={32}
+      height={32}
+      className="w-8 h-8"
+    />
   ),
-  "GitHub": (
-    <Image src="/GitHub.svg" alt="GitHub" width={32} height={32} className="w-8 h-8" />
+  GitHub: (
+    <Image
+      src="/GitHub.svg"
+      alt="GitHub"
+      width={32}
+      height={32}
+      className="w-8 h-8"
+    />
   ),
-}
+};
 
 export function SkillIcon({ name, icon }: SkillIconProps) {
   const defaultIcon = skillIcons[name] || (
     <div className="h-8 w-8 flex items-center justify-center bg-gray-600 rounded text-white font-bold text-xs">
       {name.charAt(0)}
     </div>
-  )
+  );
 
   return (
     <motion.div
@@ -106,10 +226,11 @@ export function SkillIcon({ name, icon }: SkillIconProps) {
           <div className="text-sky-400 group-hover:text-sky-300 transition-colors">
             {icon || defaultIcon}
           </div>
-          <div className="text-center font-medium text-sm text-zinc-300">{name}</div>
+          <div className="text-center font-medium text-sm text-zinc-300">
+            {name}
+          </div>
         </div>
       </div>
     </motion.div>
-  )
+  );
 }
-

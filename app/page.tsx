@@ -201,7 +201,7 @@ export default function Portfolio() {
           <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-sky-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
         </div>
 
-        <div className="container relative z-10">
+        <div className="container relative z-10 ">
           <SectionHeading title="My Skills" subtitle="기술 스택" />
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mt-16">

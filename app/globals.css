@@ -149,3 +149,26 @@
 .animate-blob {
   animation: blob 7s infinite;
 }
+
+/* Contact form input focus color override - 강제 적용 */
+form input:focus,
+form textarea:focus,
+form input:focus-visible,
+form textarea:focus-visible,
+form input:focus-within,
+form textarea:focus-within {
+  color: rgb(224 242 254) !important; /* sky-50 */
+}
+
+/* 모든 상태에서 강제 적용 */
+form input[style*="color"],
+form textarea[style*="color"] {
+  color: inherit !important;
+}
+
+form input:focus[style*="color"],
+form textarea:focus[style*="color"],
+form input:focus-visible[style*="color"],
+form textarea:focus-visible[style*="color"] {
+  color: rgb(224 242 254) !important;
+}

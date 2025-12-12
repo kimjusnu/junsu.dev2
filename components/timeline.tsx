@@ -40,7 +40,10 @@ const experienceGroups: TimelineGroup[] = [
         title: "웅진씽크빅 × Udemy Next.js 부트캠프 3기",
         detail: "2024.04 - 2024.09 · 우수 학생, 팀 프로젝트 2등",
       },
-      { title: "현장실습 서포터즈 드림온 5기 부단장", detail: "2024.02" },
+      {
+        title: "현장실습 서포터즈 드림온 5기 부단장",
+        detail: "2024.02 - 2025.02",
+      },
     ],
   },
   {
@@ -96,7 +99,7 @@ export function Timeline() {
     <div
       className={`space-y-12 relative ${
         !isMobile
-          ? "before:absolute before:inset-0 before:left-1/2 before:-translate-x-px before:border-l-2 before:border-zinc-700 before:h-full before:z-0"
+          ? "before:absolute before:inset-0 before:left-1/2 before:-translate-x-px before:border-l-2 before:border-sky-800/40 before:h-full before:z-0"
           : ""
       }`}
     >
@@ -118,24 +121,32 @@ export function Timeline() {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <div className="relative overflow-hidden rounded-xl bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 p-6 transition-all duration-300 hover:border-blue-500/50">
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-800/10 to-sky-500/10 rounded-xl blur opacity-25 hover:opacity-100 transition duration-1000 hover:duration-200"></div>
+              <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-zinc-900/85 via-slate-900/75 to-slate-900/60 backdrop-blur-sm border border-sky-500/20 p-6 transition-all duration-300 hover:border-sky-400/50 shadow-[0_12px_35px_-28px_rgba(56,189,248,0.5)]">
+                <div className="absolute -inset-1 bg-gradient-to-r from-sky-700/12 via-blue-800/10 to-sky-400/12 rounded-xl blur-sm opacity-20 hover:opacity-55 transition duration-800 hover:duration-200"></div>
 
                 <div className="relative space-y-4">
-                  <div className="px-3 py-1 inline-flex rounded-full border border-zinc-700 bg-zinc-900/70 text-sm text-zinc-100 font-semibold">
-                    {group.year}
+                  <div className="flex flex-wrap items-center gap-2">
+                    <div className="px-3 py-1 inline-flex rounded-full border border-sky-500/25 bg-sky-500/8 text-base text-sky-100 font-semibold">
+                      {group.year}
+                    </div>
+                    {group.tag && (
+                      <div className="px-3 py-1 inline-flex rounded-full border border-sky-400/20 bg-sky-400/8 text-sm text-sky-200">
+                        {group.tag}
+                      </div>
+                    )}
                   </div>
 
-                  <ul className="space-y-2">
+                  <ul className="space-y-3">
                     {group.items.map((item, idx) => (
                       <li
                         key={`${group.year}-${idx}`}
-                        className="leading-relaxed"
+                        className="leading-relaxed group/item"
                       >
-                        <div className="text-sm font-semibold text-white">
-                          • {item.title}
+                        <div className="text-base font-semibold text-sky-50 flex items-start gap-2">
+                          <span className="mt-1 h-1.5 w-1.5 rounded-full bg-gradient-to-r from-sky-500 to-blue-400 shadow-[0_0_0_3px_rgba(56,189,248,0.15)]"></span>
+                          <span>{item.title}</span>
                         </div>
-                        <div className="text-xs text-zinc-400 mt-1">
+                        <div className="text-sm text-zinc-300 mt-1 ml-3 group-hover/item:text-sky-100 transition-colors">
                           {item.detail}
                         </div>
                       </li>
@@ -148,13 +159,13 @@ export function Timeline() {
             {!isMobile && (
               <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center">
                 <motion.div
-                  className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-600 to-sky-500 z-10 flex items-center justify-center"
+                  className="w-6 h-6 rounded-full bg-gradient-to-r from-sky-600 to-blue-500 z-10 flex items-center justify-center border border-sky-300/50 shadow-[0_0_20px_rgba(56,189,248,0.45)]"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   transition={{ duration: 0.3 }}
                   viewport={{ once: true }}
                 >
-                  <div className="w-2 h-2 rounded-full bg-white"></div>
+                  <div className="w-2 h-2 rounded-full bg-sky-100"></div>
                 </motion.div>
               </div>
             )}

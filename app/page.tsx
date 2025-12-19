@@ -5,7 +5,7 @@ import { ArrowRight, Github, Mail, MapPin, Info } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
-import { ProjectCard } from "@/components/project-card";
+import { ProjectCarousel } from "@/components/project-carousel";
 import { SkillIcon } from "@/components/skill-icon";
 import { Timeline } from "@/components/timeline";
 import { ContactForm } from "@/components/contact-form";
@@ -212,6 +212,7 @@ export default function Portfolio() {
             <SkillIcon name="Git" />
             <SkillIcon name="FastAPI" />
             <SkillIcon name="NGINX" />
+            <SkillIcon name="Jinja2" />
             <SkillIcon name="NPM" />
             <SkillIcon name="Redux" />
             <SkillIcon name="Jenkins" />
@@ -226,6 +227,7 @@ export default function Portfolio() {
             <SkillIcon name="Notion" />
             <SkillIcon name="Slack" />
             <SkillIcon name="Discord" />
+            <SkillIcon name="Jira" />
             <SkillIcon name="GitHub" />
           </div>
           <p className="text-center text-sm text-zinc-500 mt-8 flex items-center justify-center gap-2">
@@ -247,46 +249,7 @@ export default function Portfolio() {
         <div className="container relative z-10">
           <SectionHeading title="Featured Projects" subtitle="주요 프로젝트" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
-            <ProjectCard
-              title="StartupQT"
-              description="퀴즈 저작·검수·관리 시스템. 콘텐츠 작성부터 검수, 승인/반려, 학습 분석까지 전 과정을 자동화한 웹 애플리케이션입니다."
-              tags={[
-                "Next.js",
-                "TypeScript",
-                "Tiptap",
-                "AG Grid",
-                "Zustand",
-                "AWS",
-              ]}
-              image="/placeholder.svg?height=400&width=600"
-              demoUrl="https://startupqt.com"
-              repoUrl="https://github.com/kimjusnu"
-            />
-            <ProjectCard
-              title="Componique"
-              description="Next.js + TailwindCSS 기반 오픈소스 UI 컴포넌트 라이브러리. npm 배포로 최고 피크 시점 20만+ 다운로드 기록."
-              tags={[
-                "Next.js",
-                "React",
-                "TypeScript",
-                "TailwindCSS",
-                "Rollup",
-                "NPM",
-              ]}
-              image="/placeholder.svg?height=400&width=600"
-              demoUrl="https://componique.vercel.app"
-              repoUrl="https://github.com/kimjusnu/componique"
-            />
-            <ProjectCard
-              title="와이리 홈페이지"
-              description="Vue.js 기반 기업 홈페이지를 Next.js SSR로 마이그레이션. SEO 최적화 및 성능 개선 (FCP 1.8s → 0.9s)."
-              tags={["Next.js", "TypeScript", "TailwindCSS", "SEO"]}
-              image="/placeholder.svg?height=400&width=600"
-              demoUrl="https://www.wairi.co.kr/webapp"
-              repoUrl="https://github.com/iri-wa-7team/iri-wa"
-            />
-          </div>
+          <ProjectCarousel />
         </div>
       </section>
 

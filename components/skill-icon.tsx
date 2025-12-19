@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Layers, HardDrive } from "lucide-react";
+import { Layers, HardDrive, ArrowRight } from "lucide-react";
 
 interface SkillIconProps {
   name: string;
@@ -112,6 +112,15 @@ const skillIcons: Record<string, React.ReactNode> = {
       className="w-8 h-8"
     />
   ),
+  Jinja2: (
+    <Image
+      src="/Jinja.svg"
+      alt="Jinja2"
+      width={32}
+      height={32}
+      className="w-8 h-8"
+    />
+  ),
   NPM: (
     <Image
       src="/NPM.svg"
@@ -201,6 +210,21 @@ const skillIcons: Record<string, React.ReactNode> = {
       className="w-8 h-8"
     />
   ),
+  Jira: (
+    <Image
+      src="/Jira.svg"
+      alt="Jira"
+      width={32}
+      height={32}
+      className="w-8 h-8"
+    />
+  ),
+};
+
+const skillLinks: Record<string, string> = {
+  React: "https://dietisdie.tistory.com/category/React",
+  Storage: "https://dietisdie.tistory.com/category/Storage",
+  Jinja2: "https://dietisdie.tistory.com/category/Jinja2",
 };
 
 export function SkillIcon({ name, icon }: SkillIconProps) {
@@ -210,6 +234,13 @@ export function SkillIcon({ name, icon }: SkillIconProps) {
     </div>
   );
 
+  const link = skillLinks[name];
+  const handleClick = () => {
+    if (link) {
+      window.open(link, "_blank", "noopener,noreferrer");
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
@@ -217,17 +248,21 @@ export function SkillIcon({ name, icon }: SkillIconProps) {
       transition={{ duration: 0.3 }}
       viewport={{ once: true }}
       whileHover={{ y: -5, scale: 1.05 }}
-      className="group"
+      className="group cursor-pointer"
+      onClick={handleClick}
     >
-      <div className="relative overflow-hidden rounded-xl bg-zinc-500/30 backdrop-blur-sm border border-zinc-400/50 p-6 h-full transition-all duration-300 hover:border-blue-500/50 flex flex-col items-center justify-center">
+      <div className="relative overflow-hidden rounded-xl bg-zinc-500/30 backdrop-blur-sm border border-zinc-400/50 p-6 h-full transition-all duration-300 hover:border-blue-500/50 hover:bg-zinc-500/50 flex flex-col items-center justify-center">
         <div className="absolute -inset-1 bg-gradient-to-r from-blue-800/10 to-sky-500/10 rounded-xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
 
-        <div className="relative flex flex-col items-center gap-3">
+        <div className="relative flex flex-col items-center gap-3 w-full">
           <div className="text-sky-400 group-hover:text-sky-300 transition-colors">
             {icon || defaultIcon}
           </div>
-          <div className="text-center font-medium text-sm text-zinc-300">
+          <div className="text-center font-medium text-sm text-zinc-300 group-hover:text-zinc-100 transition-colors">
             {name}
+          </div>
+          <div className="absolute top-1/2 -translate-y-1/2 right-1 opacity-0 group-hover:opacity-100 translate-x-[-8px] group-hover:translate-x-0 transition-all duration-200 ease-out">
+            <ArrowRight className="h-4 w-4 text-blue-400 group-hover:text-sky-400 transition-colors" />
           </div>
         </div>
       </div>

@@ -14,16 +14,37 @@ type TimelineGroup = {
 
 const experienceGroups: TimelineGroup[] = [
   {
-    year: "2025",
-    tag: "인턴 · 현업 · 강의",
+    year: "2026",
+    tag: "현업",
     items: [
       {
-        title: "에임비랩 SW부서 대리 (프론트엔드 & 백엔드)",
-        detail: "2025.07 - 현재 · 마이피드 1.5/2.0, 관리기 등 개발",
+        title: "에임비랩 SW개발팀 대리 (프론트엔드 & 백엔드)",
+        detail: "2025.07 - 현재",
+      },
+    ],
+  },
+  {
+    year: "2025",
+    tag: "인턴 · 현업 · 교육 · 학업",
+    items: [
+      {
+        title: "AI 기반 데이터 분석 및 시각화 교육 수료",
+        // 2025.12.12에 수강
+        detail: "2025.12.22 · 한국산학연협회 주관",
       },
       {
-        title: "더이노베이터스 TA 기술연구부서 인턴",
-        detail: "2025.03 - 2025.06 · StartupQT 플랫폼, CI/CD 고도화",
+        title: "에임비랩 SW개발팀 (프론트엔드 & 백엔드)",
+        detail:
+          "2025.07 - 2025.12 · 마이피드 1.0 유지보수/1.5 개발 · 홈페이지 마이그레이션 · GA 기반 모니터링 및 데이터 분석 · AI 기반 관리기 3종 UI/UX 설계 및 개발",
+      },
+      {
+        title: "한국공학대학교 SW캡스톤디자인 우수상",
+        detail:
+          "2025.03 - 2025.09 · 식습관 관리 앱 '잇핏' · 프론트엔드 개발(PWA) · 논문 작성 · 성과 발표",
+      },
+      {
+        title: "더이노베이터스 TA 기술연구부서 인턴 (프론트엔드)",
+        detail: "2025.03 - 2025.06 · StartupQT 플랫폼 개발 및 백오피스 개발",
       },
     ],
   },
@@ -33,16 +54,22 @@ const experienceGroups: TimelineGroup[] = [
     items: [
       {
         title: "스나이퍼팩토리 프론트엔드 3기",
-        detail: "2024.10 - 2024.12 · 팀 프로젝트 리더, 우수상",
+        detail:
+          "2024.10 - 2024.12 · 팀 프로젝트 리더 · 우수상 · 와이리 Vue.js→Next.js 마이그레이션",
       },
-      { title: "TUK GDSC Beginner", detail: "2024.05 - 2024.08 · React 학습" },
+      {
+        title: "TUK GDSC Beginner",
+        detail: "2024.05 - 2024.08 · React 스터디 및 프로젝트",
+      },
       {
         title: "웅진씽크빅 × Udemy Next.js 부트캠프 3기",
-        detail: "2024.04 - 2024.09 · 우수 학생, 팀 프로젝트 2등",
+        detail:
+          "2024.04 - 2024.09 · 우수 수강생 선발 · 팀 프로젝트 2등 · Componique 개발",
       },
       {
         title: "현장실습 서포터즈 드림온 5기 부단장",
-        detail: "2024.02 - 2025.02",
+        detail:
+          "2024.02 - 2025.02 · 현장실습 상담소 개최 · 기업 인터뷰 진행 · 유튜브 영상 제작",
       },
     ],
   },
@@ -52,12 +79,13 @@ const experienceGroups: TimelineGroup[] = [
     items: [
       {
         title: "현장실습 서포터즈 드림온 4기 단원",
-        detail: "2023.07 - 2024.01 · 현장실습 지원",
+        detail: "2023.07 - 2024.01 · 현장실습 상담소 개최 · 박람회 부스 운영",
       },
       { title: "프론트엔드 학습 시작", detail: "2023.09 · HTML, JS, CSS" },
       {
         title: "현장실습 서포터즈 드림온 3기 단원",
-        detail: "2022.12 - 2023.06 · 캠퍼스 홍보 콘텐츠",
+        detail:
+          "2022.12 - 2023.06 · 카드뉴스/포스터 제작 · SNS 채널 관리 · 행사 지원",
       },
     ],
   },
@@ -66,9 +94,18 @@ const experienceGroups: TimelineGroup[] = [
     tag: "군 복무",
     items: [
       {
-        title: "대한민국 육군 53사단 126여단 4대대 병장",
+        title: "부산 호국훈련",
+        detail: "2021.10.25 - 2021.11.05 · 전략기획 PPT 제작 및 훈련 참가",
+      },
+      {
+        title: "UFS (Ulchi Freedom Shield) 훈련 참가",
         detail:
-          "2021.06.07 - 2022.12.06 · 부산 호국훈련 전략기획 PPT 제작·발표",
+          "2021.08 · 위성운용병(군통신망 개통 및 운영) · 정보분석조(지하철역 인질 테러 대응 훈련)",
+      },
+      {
+        title: "대한민국 육군 53사단 126여단 4대대 병장 만기전역",
+        detail:
+          "2021.06.07 - 2022.12.06 · 통신병 · 정보분석조 · 부대 통신망 유지보수",
       },
     ],
   },
@@ -86,7 +123,7 @@ const experienceGroups: TimelineGroup[] = [
       },
       {
         title: "한국공학대학교 컴퓨터공학부 입학",
-        detail: "2020.03 · 소프트웨어 전공",
+        detail: "2020.03 · 컴퓨터공학부 소프트웨어 전공",
       },
     ],
   },
@@ -97,7 +134,7 @@ export function Timeline() {
 
   return (
     <div
-      className={`space-y-12 relative ${
+      className={`space-y-6 relative ${
         !isMobile
           ? "before:absolute before:inset-0 before:left-1/2 before:-translate-x-px before:border-l-2 before:border-sky-800/40 before:h-full before:z-0"
           : ""
@@ -114,7 +151,7 @@ export function Timeline() {
           >
             <motion.div
               className={`w-full md:w-1/2 ${
-                alignRight ? "md:pl-10" : "md:pr-10"
+                alignRight ? "md:pl-6" : "md:pr-6"
               }`}
               initial={{ opacity: 0, x: alignRight ? 50 : -50 }}
               whileInView={{ opacity: 1, x: 0 }}

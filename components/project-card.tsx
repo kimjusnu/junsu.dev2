@@ -1,12 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, Github, FileText, Download } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { getImagePath } from "@/lib/utils";
 
 interface ProjectCardProps {
   title: string;
@@ -38,10 +38,11 @@ export function ProjectCard({
       <div className="relative h-[550px] overflow-hidden rounded-xl bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 transition-all duration-300 group-hover:border-blue-500/50">
         <div className="relative h-full flex flex-col">
           <div className="relative overflow-hidden w-full aspect-video bg-zinc-900/50">
-            <img
-              src={getImagePath(image || "/placeholder.svg")}
+            <Image
+              src={image || "/placeholder.svg"}
               alt={title}
-              className="w-full h-full object-contain"
+              fill
+              className="object-contain"
             />
           </div>
 

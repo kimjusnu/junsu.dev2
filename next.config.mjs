@@ -1,13 +1,8 @@
 /** @type {import('next').NextConfig} */
-const basePath = process.env.NODE_ENV === "production" ? "/junsu.dev2" : "";
-
 const nextConfig = {
   output: "export",
-  basePath: basePath,
-  assetPrefix: basePath,
-  env: {
-    NEXT_PUBLIC_BASE_PATH: basePath,
-  },
+  basePath: process.env.NODE_ENV === "production" ? "/junsu.dev2" : "",
+  assetPrefix: process.env.NODE_ENV === "production" ? "/junsu.dev2" : "",
   eslint: {
     ignoreDuringBuilds: true,
   },

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Github, Mail, MapPin, Info, BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
 import { TfiFaceSmile } from "react-icons/tfi";
@@ -16,7 +17,6 @@ import { MouseFollower } from "@/components/mouse-follower";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { SectionHeading } from "@/components/section-heading";
 import { GlassmorphicCard } from "@/components/glassmorphic-card";
-import { getImagePath } from "@/lib/utils";
 
 export default function Portfolio() {
   return (
@@ -58,10 +58,10 @@ export default function Portfolio() {
                 asChild
               >
                 <Link href="#projects">
-                  <span className="relative z-10 flex items-center">
+                <span className="relative z-10 flex items-center">
                     View Projects{" "}
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </span>
+                </span>
                   <span className="absolute inset-0 bg-gradient-to-r from-sky-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                 </Link>
               </Button>
@@ -152,10 +152,12 @@ export default function Portfolio() {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <div className="relative">
-                <img
-                  src={getImagePath("/profile.png")}
+            <div className="relative">
+                <Image
+                  src="/profile.png"
                   alt="김준수"
+                  width={410}
+                  height={410}
                   className="max-w-[410px] h-auto object-contain rounded-xl"
                 />
                 <div className="absolute top-4 left-4 flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900/80 backdrop-blur-sm border border-zinc-700/50">
@@ -163,8 +165,8 @@ export default function Portfolio() {
                   <span className="text-sm font-medium text-white">
                     오션뷰 카페 얼트에서
                   </span>
+                  </div>
                 </div>
-              </div>
             </motion.div>
 
             <div className="flex">
@@ -280,7 +282,7 @@ export default function Portfolio() {
           <SectionHeading
             title="이런 프로젝트들을 해봤어요"
             subtitle="progects"
-          />
+            />
 
           <ProjectCarousel />
         </div>
@@ -361,7 +363,7 @@ export default function Portfolio() {
             </GlassmorphicCard>
 
             <div className="h-full">
-              <ContactForm />
+            <ContactForm />
             </div>
           </div>
         </div>

@@ -153,12 +153,12 @@ export function ContactForm() {
         <div className="absolute -inset-1 bg-gradient-to-r from-blue-800/10 to-sky-500/10 rounded-xl blur opacity-25 hover:opacity-100 transition duration-1000 hover:duration-200"></div>
 
         <div className="relative">
-          <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
+          <h3 className="text-2xl font-bold mb-6">메일 보내기</h3>
 
           <form onSubmit={handleSubmit} noValidate className="space-y-6">
             <div className="space-y-2">
               <Input
-                placeholder="Your Name"
+                placeholder="이름"
                 name="name"
                 onInput={() =>
                   errors.name && setErrors((p) => ({ ...p, name: undefined }))
@@ -181,7 +181,7 @@ export function ContactForm() {
             <div className="space-y-2">
               <Input
                 type="email"
-                placeholder="Your Email"
+                placeholder="이메일"
                 name="email"
                 onInput={() =>
                   errors.email && setErrors((p) => ({ ...p, email: undefined }))
@@ -203,7 +203,7 @@ export function ContactForm() {
             </div>
             <div className="space-y-2">
               <Input
-                placeholder="Subject"
+                placeholder="제목"
                 name="subject"
                 onInput={() =>
                   errors.subject &&
@@ -226,7 +226,7 @@ export function ContactForm() {
             </div>
             <div className="space-y-2">
               <Textarea
-                placeholder="Your Message"
+                placeholder="메시지"
                 rows={5}
                 name="message"
                 onInput={() =>
@@ -254,10 +254,10 @@ export function ContactForm() {
               disabled={isSubmitting}
             >
               {isSubmitting ? (
-                <>Sending...</>
+                <>전송 중...</>
               ) : (
                 <>
-                  Send Message <Send className="ml-2 h-4 w-4" />
+                  메일 보내기 <Send className="ml-2 h-4 w-4" />
                 </>
               )}
             </Button>

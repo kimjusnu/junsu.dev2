@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Github, Mail, MapPin, Info } from "lucide-react";
+import { ArrowRight, Github, Mail, MapPin, Info, BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
+import { TfiFaceSmile } from "react-icons/tfi";
 
 import { Button } from "@/components/ui/button";
 import { ProjectCarousel } from "@/components/project-carousel";
@@ -46,8 +47,9 @@ export default function Portfolio() {
               </span>
             </h1>
             <p className="text-xl text-zinc-400 max-w-[600px]">
-              직관적이고 깔끔한 화면을 만드는 프론트엔드 개발자입니다. 사용자가
-              바로 이해할 수 있는 구조, 사용하기 편한 흐름을 고민합니다.
+              사용자가 ‘생각하지 않아도 되는 UI’를 만드는 프론트엔드
+              개발자입니다. 백엔드와 AI까지 함께 다루며, 화면 너머의 흐름까지
+              이해하고 설계합니다.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <Button
@@ -95,6 +97,20 @@ export default function Portfolio() {
                   <span className="sr-only">Email</span>
                 </Button>
               </Link>
+              <Link
+                href="https://dietisdie.tistory.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+                >
+                  <BookOpen className="h-5 w-5" />
+                  <span className="sr-only">Blog</span>
+                </Button>
+              </Link>
             </div>
           </div>
           <div className="flex justify-center">
@@ -117,7 +133,15 @@ export default function Portfolio() {
         </div>
 
         <div className="container relative z-10">
-          <SectionHeading title="About Me" subtitle="저를 소개드립니다" />
+          <SectionHeading
+            title={
+              <span className="flex items-center justify-center gap-2">
+                저를 소개합니다{" "}
+                <TfiFaceSmile className="text-zinc-200 w-8 h-8 md:w-10 md:h-10" />
+              </span>
+            }
+            subtitle="about"
+          />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-16">
             <motion.div
@@ -145,46 +169,48 @@ export default function Portfolio() {
             <div className="flex">
               <GlassmorphicCard className="w-full">
                 <p className="text-lg text-zinc-300">
-                  저는 화려한 디자인보다, 직관적이고 깔끔한 화면을 만드는
-                  프론트엔드 개발자입니다. 솔직히 말씀드리면 디자인은 잘
-                  못합니다. 다양한 효과도 넣어보고 싶고, 예쁘게 꾸미고 싶지만…
-                  쉽지 않더라고요. 😅
+                  저는 남중, 남고, 공대, 군대를 거치며 자연스럽게 효율과
+                  명확함을 중시하는 환경에 익숙해졌습니다.
                 </p>
                 <p className="text-lg text-zinc-300 mt-4">
-                  남중, 남고, 공대, 군대를 거쳐온 제 백그라운드 때문인지
-                  화려하고 감성적인 디자인보단, 심플하고 직관적인 UI가 더
-                  익숙합니다. 하지만 그렇기 때문에 사용자가 바로 이해할 수 있는
-                  구조, 사용하기 편한 흐름을 더 깊이 고민하게 됐습니다.
+                  불필요한 요소보다는, 한눈에 이해되고 빠르게 사용할 수 있는
+                  구조를 선호하며 이러한 기준은 제 UI와 UX 설계 방식의 바탕이
+                  되었습니다.
                 </p>
                 <p className="text-lg text-zinc-300 mt-4">
-                  저는 기능을 구현하는 것이 아니라, 사용자의 경험을 설계합니다.
-                  GUI를 채우는 작업보다는, UI가 전달할 정보와 흐름, 그리고 UX가
-                  만들어낼 감정과 반응을 먼저 생각합니다.
+                  처음 사용하는 사용자도 별도의 설명 없이 사용할 수 있는 경험을
+                  목표로 하며, 실제 서비스 환경에서도 이러한 방향은 긍정적인
+                  피드백으로 이어졌습니다.
+                </p>
+                <p className="text-lg text-zinc-300 mt-4">
+                  최근에는 프론트엔드를 중심으로 백엔드와 AI까지 함께 다루며,
+                  화면의 효율뿐만 아니라 시스템 전체의 효율까지 고려한 개발을
+                  지향하고 있습니다.
                 </p>
 
                 <div className="grid grid-cols-2 gap-4 mt-8">
                   <div className="space-y-1">
-                    <div className="text-sm text-zinc-500">이름</div>
-                    <div className="font-medium">김준수</div>
+                    <div className="text-sm text-zinc-500">역할/포지션</div>
+                    <div className="font-medium">프론트엔드 중심 풀스택</div>
                   </div>
                   <div className="space-y-1">
-                    <div className="text-sm text-zinc-500">이메일</div>
-                    <div className="font-medium">junsu4621@naver.com</div>
+                    <div className="text-sm text-zinc-500">주요 기술</div>
+                    <div className="font-medium">React, Next.js</div>
                   </div>
                   <div className="space-y-1">
-                    <div className="text-sm text-zinc-500">위치</div>
-                    <div className="font-medium">대한민국</div>
-                  </div>
-                  <div className="space-y-1">
-                    <div className="text-sm text-zinc-500">상태</div>
-                    <div className="font-medium text-green-500">
-                      기회 열려있음
+                    <div className="text-sm text-zinc-500">학력</div>
+                    <div className="font-medium">
+                      한국공학대학교 컴퓨터공학부 졸업
                     </div>
+                  </div>
+                  <div className="space-y-1">
+                    <div className="text-sm text-zinc-500">경력</div>
+                    <div className="font-medium">1년+</div>
                   </div>
                 </div>
 
                 <div className="mt-8">
-                  <Button className="bg-zinc-800 hover:bg-zinc-700 text-white">
+                  <Button className="bg-gradient-to-r from-blue-600 to-sky-500 hover:from-sky-500 hover:to-blue-600 border-0 text-white">
                     Download Resume
                   </Button>
                 </div>
@@ -202,7 +228,10 @@ export default function Portfolio() {
         </div>
 
         <div className="container relative z-10 ">
-          <SectionHeading title="My Skills" subtitle="기술 스택" />
+          <SectionHeading
+            title="아래의 기술들을 다룰 수 있습니다"
+            subtitle="tech stack"
+          />
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mt-16">
             <SkillIcon name="JavaScript" />
@@ -247,7 +276,10 @@ export default function Portfolio() {
         </div>
 
         <div className="container relative z-10">
-          <SectionHeading title="Featured Projects" subtitle="주요 프로젝트" />
+          <SectionHeading
+            title="이런 프로젝트들을 해봤어요"
+            subtitle="progects"
+          />
 
           <ProjectCarousel />
         </div>
@@ -261,7 +293,7 @@ export default function Portfolio() {
         </div>
 
         <div className="container relative z-10">
-          <SectionHeading title="Work Experience" subtitle="제 경력" />
+          <SectionHeading title="이렇게 성장해왔습니다" subtitle="experience" />
 
           <div className="mt-16">
             <Timeline />
@@ -277,11 +309,25 @@ export default function Portfolio() {
         </div>
 
         <div className="container relative z-10">
-          <SectionHeading title="Get In Touch" subtitle="함께 일해요" />
+          <div className="text-center space-y-4 mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-block">
+                <div className="relative px-3 py-1 text-sm font-medium rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
+                  <span className="relative z-10">contact</span>
+                  <span className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-800/20 to-sky-500/20 animate-pulse"></span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
             <GlassmorphicCard className="h-full">
-              <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+              <h3 className="text-2xl font-bold mb-6">연락처 정보</h3>
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center">
@@ -297,17 +343,18 @@ export default function Portfolio() {
                     <Github className="h-5 w-5 text-sky-400" />
                   </div>
                   <div>
-                    <div className="text-sm text-zinc-500">GitHub</div>
+                    <div className="text-sm text-zinc-500">깃허브</div>
                     <div className="font-medium">github.com/kimjusnu</div>
                   </div>
                 </div>
-              </div>
-
-              <div className="mt-8 pt-8 border-t border-zinc-800">
-                <h4 className="text-lg font-medium mb-4">현재 상태</h4>
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
-                  <span>프리랜스 및 정규직 기회 열려있음</span>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center">
+                    <BookOpen className="h-5 w-5 text-sky-400" />
+                  </div>
+                  <div>
+                    <div className="text-sm text-zinc-500">블로그</div>
+                    <div className="font-medium">dietisdie.tistory.com</div>
+                  </div>
                 </div>
               </div>
             </GlassmorphicCard>
@@ -356,6 +403,20 @@ export default function Portfolio() {
               >
                 <Mail className="h-5 w-5" />
                 <span className="sr-only">Email</span>
+              </Button>
+            </Link>
+            <Link
+              href="https://dietisdie.tistory.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+              >
+                <BookOpen className="h-5 w-5" />
+                <span className="sr-only">Blog</span>
               </Button>
             </Link>
           </div>

@@ -3,6 +3,7 @@ const nextConfig = {
   output: "export",
   basePath: "/junsu.dev2",
   assetPrefix: "/junsu.dev2/",
+  trailingSlash: true,
   eslint: {
     ignoreDuringBuilds: true,
   },

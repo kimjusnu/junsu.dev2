@@ -21,10 +21,7 @@ export function ContactForm() {
     subject?: string;
     message?: string;
   }>({});
-  const formspreeEndpoint = useMemo(
-    () => process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || "",
-    []
-  );
+  const formspreeEndpoint = ""; // Formspree 엔드포인트 URL을 여기에 입력하세요
 
   const handleFocus = (
     e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>

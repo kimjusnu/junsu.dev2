@@ -22,7 +22,7 @@ const projects: Project[] = [
     description:
       "에임비랩의 핵심서비스 마이피드1.0을 유지보수 및 기능개선하고 1.5를 신규개발 하였습니다.",
     tags: ["HTML", "JavaScript", "Jinja2"],
-    image: "/myfeed1.png",
+    image: "/junsu.dev2/myfeed1.png",
     demoUrl: "#",
     repoUrl: "#",
     deepDiveFile: "/docs/myfeed-deepdive.pdf",
@@ -32,7 +32,7 @@ const projects: Project[] = [
     description:
       "식습관 관리 앱. 사용자 식습관 데이터를 활용한 맞춤형 영양관리 서비스. PWA 형태로 개발했습니다.",
     tags: ["Next.js", "React", "TypeScript", "PWA", "AI"],
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/junsu.dev2/placeholder.svg?height=400&width=600",
     demoUrl: "#",
     repoUrl: "#",
     deepDiveFile: "/docs/eatfit-deepdive.pdf",
@@ -42,7 +42,7 @@ const projects: Project[] = [
     description:
       "퀴즈 저작·검수·관리 시스템. 콘텐츠 작성부터 검수, 승인/반려, 학습 분석까지 전 과정을 자동화한 웹 애플리케이션입니다.",
     tags: ["Next.js", "TypeScript", "Tiptap", "AG Grid", "Zustand", "AWS"],
-    image: "/startupqt1.png",
+    image: "/junsu.dev2/startupqt1.png",
     demoUrl: "https://startupqt.com",
     repoUrl: "https://github.com/kimjusnu",
     deepDiveFile: "/docs/startupqt-deepdive.pdf",
@@ -52,7 +52,7 @@ const projects: Project[] = [
     description:
       "Vue.js 기반 기업 홈페이지를 Next.js SSR로 마이그레이션. SEO 최적화 및 성능 개선 (FCP 1.8s → 0.9s).",
     tags: ["Next.js", "TypeScript", "TailwindCSS", "SEO"],
-    image: "/yiry1.png",
+    image: "/junsu.dev2/yiry1.png",
     demoUrl: "https://www.wairi.co.kr/webapp",
     repoUrl: "https://github.com/iri-wa-7team/iri-wa",
     deepDiveFile: "/docs/wairi-deepdive.pdf",
@@ -62,7 +62,7 @@ const projects: Project[] = [
     description:
       "Next.js + TailwindCSS 기반 오픈소스 UI 컴포넌트 라이브러리. npm 배포로 최고 피크 시점 20만+ 다운로드 기록.",
     tags: ["Next.js", "React", "TypeScript", "TailwindCSS", "Rollup", "NPM"],
-    image: "/componique1.png",
+    image: "/junsu.dev2/componique1.png",
     demoUrl: "https://componique.vercel.app",
     repoUrl: "https://github.com/kimjusnu/componique",
     deepDiveFile: "/docs/componique-deepdive.pdf",

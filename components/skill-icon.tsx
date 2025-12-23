@@ -13,7 +13,7 @@ const skillIcons: Record<string, React.ReactNode> = {
   // Frontend
   JavaScript: (
     <Image
-      src="/JavaScript.svg"
+      src="/junsu.dev2/JavaScript.svg"
       alt="JavaScript"
       width={32}
       height={32}
@@ -22,7 +22,7 @@ const skillIcons: Record<string, React.ReactNode> = {
   ),
   TypeScript: (
     <Image
-      src="/TypeScript.svg"
+      src="/junsu.dev2/TypeScript.svg"
       alt="TypeScript"
       width={32}
       height={32}
@@ -31,7 +31,7 @@ const skillIcons: Record<string, React.ReactNode> = {
   ),
   React: (
     <Image
-      src="/React.svg"
+      src="/junsu.dev2/React.svg"
       alt="React"
       width={32}
       height={32}
@@ -40,7 +40,7 @@ const skillIcons: Record<string, React.ReactNode> = {
   ),
   "Next.js": (
     <Image
-      src="/Next.js.svg"
+      src="/junsu.dev2/Next.js.svg"
       alt="Next.js"
       width={32}
       height={32}
@@ -51,7 +51,7 @@ const skillIcons: Record<string, React.ReactNode> = {
   // DevOps & Infra
   Git: (
     <Image
-      src="/Git.svg"
+      src="/junsu.dev2/Git.svg"
       alt="Git"
       width={32}
       height={32}
@@ -60,7 +60,7 @@ const skillIcons: Record<string, React.ReactNode> = {
   ),
   Jenkins: (
     <Image
-      src="/Jenkins.svg"
+      src="/junsu.dev2/Jenkins.svg"
       alt="Jenkins"
       width={32}
       height={32}
@@ -69,7 +69,7 @@ const skillIcons: Record<string, React.ReactNode> = {
   ),
   "Github Actions (CI/CD)": (
     <Image
-      src="/GitHub Actions.svg"
+      src="/junsu.dev2/GitHub Actions.svg"
       alt="GitHub Actions"
       width={32}
       height={32}
@@ -78,7 +78,7 @@ const skillIcons: Record<string, React.ReactNode> = {
   ),
   "AWS (EC2, S3)": (
     <Image
-      src="/AWS.svg"
+      src="/junsu.dev2/AWS.svg"
       alt="AWS"
       width={32}
       height={32}
@@ -87,7 +87,7 @@ const skillIcons: Record<string, React.ReactNode> = {
   ),
   Vercel: (
     <Image
-      src="/Vercel.svg"
+      src="/junsu.dev2/Vercel.svg"
       alt="Vercel"
       width={32}
       height={32}
@@ -96,7 +96,7 @@ const skillIcons: Record<string, React.ReactNode> = {
   ),
   FastAPI: (
     <Image
-      src="/FastAPI.svg"
+      src="/junsu.dev2/FastAPI.svg"
       alt="FastAPI"
       width={32}
       height={32}
@@ -105,7 +105,7 @@ const skillIcons: Record<string, React.ReactNode> = {
   ),
   NGINX: (
     <Image
-      src="/NGINX.svg"
+      src="/junsu.dev2/NGINX.svg"
       alt="NGINX"
       width={32}
       height={32}
@@ -114,7 +114,7 @@ const skillIcons: Record<string, React.ReactNode> = {
   ),
   Jinja2: (
     <Image
-      src="/Jinja.svg"
+      src="/junsu.dev2/Jinja.svg"
       alt="Jinja2"
       width={32}
       height={32}
@@ -123,7 +123,7 @@ const skillIcons: Record<string, React.ReactNode> = {
   ),
   NPM: (
     <Image
-      src="/NPM.svg"
+      src="/junsu.dev2/NPM.svg"
       alt="NPM"
       width={32}
       height={32}
@@ -132,7 +132,7 @@ const skillIcons: Record<string, React.ReactNode> = {
   ),
   Redux: (
     <Image
-      src="/Redux.svg"
+      src="/junsu.dev2/Redux.svg"
       alt="Redux"
       width={32}
       height={32}
@@ -143,7 +143,7 @@ const skillIcons: Record<string, React.ReactNode> = {
   // State & Data
   Zustand: (
     <Image
-      src="/Zustand.svg"
+      src="/junsu.dev2/Zustand.svg"
       alt="Zustand"
       width={32}
       height={32}
@@ -154,7 +154,7 @@ const skillIcons: Record<string, React.ReactNode> = {
   Storage: <HardDrive className="h-8 w-8 text-sky-400" />,
   Firebase: (
     <Image
-      src="/Firebase.svg"
+      src="/junsu.dev2/Firebase.svg"
       alt="Firebase"
       width={32}
       height={32}
@@ -165,7 +165,7 @@ const skillIcons: Record<string, React.ReactNode> = {
   // Design & UX
   Figma: (
     <Image
-      src="/Figma.svg"
+      src="/junsu.dev2/Figma.svg"
       alt="Figma"
       width={32}
       height={32}
@@ -176,7 +176,7 @@ const skillIcons: Record<string, React.ReactNode> = {
   // Communication & Collab
   Notion: (
     <Image
-      src="/Notion.png"
+      src="/junsu.dev2/Notion.png"
       alt="Notion"
       width={32}
       height={32}
@@ -185,7 +185,7 @@ const skillIcons: Record<string, React.ReactNode> = {
   ),
   Slack: (
     <Image
-      src="/Slack.svg"
+      src="/junsu.dev2/Slack.svg"
       alt="Slack"
       width={32}
       height={32}
@@ -194,7 +194,7 @@ const skillIcons: Record<string, React.ReactNode> = {
   ),
   Discord: (
     <Image
-      src="/Discord.png"
+      src="/junsu.dev2/Discord.png"
       alt="Discord"
       width={32}
       height={32}
@@ -203,7 +203,7 @@ const skillIcons: Record<string, React.ReactNode> = {
   ),
   GitHub: (
     <Image
-      src="/GitHub.svg"
+      src="/junsu.dev2/GitHub.svg"
       alt="GitHub"
       width={32}
       height={32}
@@ -212,7 +212,7 @@ const skillIcons: Record<string, React.ReactNode> = {
   ),
   Jira: (
     <Image
-      src="/Jira.svg"
+      src="/junsu.dev2/Jira.svg"
       alt="Jira"
       width={32}
       height={32}

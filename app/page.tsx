@@ -154,7 +154,7 @@ export default function Portfolio() {
             >
             <div className="relative">
                 <Image
-                  src="/profile.png"
+                  src="/junsu.dev2/profile.png"
                   alt="김준수"
                   width={410}
                   height={410}

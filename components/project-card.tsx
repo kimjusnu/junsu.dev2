@@ -39,7 +39,7 @@ export function ProjectCard({
         <div className="relative h-full flex flex-col">
           <div className="relative overflow-hidden w-full aspect-video bg-zinc-900/50">
             <Image
-              src={image || "/placeholder.svg"}
+              src={image || "/junsu.dev2/placeholder.svg"}
               alt={title}
               fill
               className="object-contain"

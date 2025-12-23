@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  basePath: process.env.NODE_ENV === "production" ? "/junsu.dev2" : "",
-  assetPrefix: process.env.NODE_ENV === "production" ? "/junsu.dev2" : "",
+  basePath: "/junsu.dev2",
+  assetPrefix: "/junsu.dev2/",
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -14,4 +14,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

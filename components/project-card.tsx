@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { getImagePath } from "@/lib/utils";
 
 interface ProjectCardProps {
   title: string;
@@ -38,7 +39,7 @@ export function ProjectCard({
         <div className="relative h-full flex flex-col">
           <div className="relative overflow-hidden w-full aspect-video bg-zinc-900/50">
             <img
-              src={image || "/placeholder.svg"}
+              src={getImagePath(image || "/placeholder.svg")}
               alt={title}
               className="w-full h-full object-contain"
             />

@@ -16,6 +16,7 @@ import { MouseFollower } from "@/components/mouse-follower";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { SectionHeading } from "@/components/section-heading";
 import { GlassmorphicCard } from "@/components/glassmorphic-card";
+import { getImagePath } from "@/lib/utils";
 
 export default function Portfolio() {
   return (
@@ -153,7 +154,7 @@ export default function Portfolio() {
             >
               <div className="relative">
                 <img
-                  src="/profile.png"
+                  src={getImagePath("/profile.png")}
                   alt="김준수"
                   className="max-w-[410px] h-auto object-contain rounded-xl"
                 />
